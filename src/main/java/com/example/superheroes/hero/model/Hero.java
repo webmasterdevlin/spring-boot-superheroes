@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.UUID;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 public class Hero implements Serializable {
@@ -14,6 +15,7 @@ public class Hero implements Serializable {
   private UUID id;
 
   @NotNull(message = "First Name is required")
+  @Pattern(regexp = "^[a-zA-Z ]+$", message = "name must be a string")
   private String firstName;
 
   private String lastName;
