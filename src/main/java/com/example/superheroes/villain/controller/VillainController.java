@@ -2,15 +2,14 @@ package com.example.superheroes.villain.controller;
 
 import com.example.superheroes.villain.model.Villain;
 import com.example.superheroes.villain.service.VillainService;
-import io.swagger.annotations.Api;
-import java.util.List;
 import java.util.UUID;
 import javax.validation.Valid;
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.*;
 
+@Log4j2
 @AllArgsConstructor
-@Api(value = "Villains", produces = "application/json", tags = "villain")
 @RestController
 @RequestMapping(path = "api/v1/villains")
 public class VillainController {
@@ -18,7 +17,7 @@ public class VillainController {
   private final VillainService villainService;
 
   @GetMapping
-  public List<Villain> getVillains() {
+  public Iterable<Villain> getVillains() {
     return villainService.findAllVillains();
   }
 

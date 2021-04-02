@@ -14,7 +14,7 @@ public class VillainService {
 
   private final VillainRepository villainRepository;
 
-  public List<Villain> findAllVillains() {
+  public Iterable<Villain> findAllVillains() {
     return villainRepository.findAll();
   }
 

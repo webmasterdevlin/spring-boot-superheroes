@@ -2,25 +2,22 @@ package com.example.superheroes.villain.model;
 
 import java.util.UUID;
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
+import javax.validation.constraints.NotNull;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import org.springframework.data.redis.core.RedisHash;
 
+@RedisHash("Villain")
 @Data
-@EqualsAndHashCode
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table
 public class Villain {
 
   @Id
-  @GeneratedValue(generator = "UUID")
+  @GeneratedValue(strategy = GenerationType.AUTO, generator = "UUID")
+  @Column(nullable = false, updatable = false)
   private UUID id;
 
-  @NotBlank
+  @NotNull(message = "First Name is required")
   private String firstName;
 
   private String lastName;

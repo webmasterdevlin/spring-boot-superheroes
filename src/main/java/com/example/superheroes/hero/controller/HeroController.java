@@ -2,15 +2,16 @@ package com.example.superheroes.hero.controller;
 
 import com.example.superheroes.hero.model.Hero;
 import com.example.superheroes.hero.service.HeroService;
-import io.swagger.annotations.Api;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import javax.validation.Valid;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@Api(value = "Heroes", produces = "application/json", tags = "hero")
+@Slf4j
 @RestController
 @RequestMapping(path = "api/v1/heroes")
 public class HeroController {
@@ -29,14 +30,14 @@ public class HeroController {
 
   @GetMapping("/{id}")
   public ResponseEntity<Optional<Hero>> getHeroById(
-    @PathVariable("id") Long id
+    @PathVariable("id") UUID id
   ) {
     var hero = heroService.findHeroById(id);
     return new ResponseEntity<>(hero, HttpStatus.OK);
   }
 
   @DeleteMapping("/{id}")
-  public ResponseEntity<Void> deleteHeroById(@PathVariable("id") Long id) {
+  public ResponseEntity<Void> deleteHeroById(@PathVariable("id") UUID id) {
     heroService.removeHeroById(id);
     return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
   }
@@ -49,7 +50,7 @@ public class HeroController {
 
   @PutMapping("/{id}")
   public ResponseEntity<Void> putHero(
-    @PathVariable("id") Long id,
+    @PathVariable("id") UUID id,
     @Valid @RequestBody Hero hero
   ) {
     heroService.updateHero(id, hero);

@@ -4,6 +4,7 @@ import com.example.superheroes.hero.model.Hero;
 import com.example.superheroes.hero.repository.HeroRepository;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,12 +22,12 @@ public class HeroService {
     return heroRepository.findAll();
   }
 
-  public Optional<Hero> findHeroById(Long id) {
+  public Optional<Hero> findHeroById(UUID id) {
     findOrThrow(id);
     return heroRepository.findById(id);
   }
 
-  public void removeHeroById(Long id) {
+  public void removeHeroById(UUID id) {
     findOrThrow(id);
     heroRepository.deleteById(id);
   }
@@ -35,12 +36,12 @@ public class HeroService {
     return heroRepository.save(hero);
   }
 
-  public void updateHero(Long id, Hero hero) {
+  public void updateHero(UUID id, Hero hero) {
     findOrThrow(id);
     heroRepository.save(hero);
   }
 
-  private void findOrThrow(final Long id) {
+  private void findOrThrow(final UUID id) {
     heroRepository
       .findById(id)
       .orElseThrow(

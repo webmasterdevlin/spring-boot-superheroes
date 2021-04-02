@@ -1,23 +1,27 @@
 package com.example.superheroes.hero.model;
 
 import java.io.Serializable;
+import java.util.UUID;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Hero implements Serializable {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  @GeneratedValue(strategy = GenerationType.AUTO, generator = "UUID")
   @Column(nullable = false, updatable = false)
-  private Long id;
+  private UUID id;
 
+  @NotNull(message = "First Name is required")
   private String firstName;
+
   private String lastName;
   private String house;
   private String knownAs;
 
   public Hero(
-    Long id,
+    UUID id,
     String firstName,
     String lastName,
     String house,
@@ -32,11 +36,11 @@ public class Hero implements Serializable {
 
   public Hero() {}
 
-  public Long getId() {
+  public UUID getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(UUID id) {
     this.id = id;
   }
 
@@ -75,7 +79,7 @@ public class Hero implements Serializable {
   @Override
   public String toString() {
     return (
-      "Hero{" +
+      "Hero {" +
       "id=" +
       id +
       ", firstName='" +
