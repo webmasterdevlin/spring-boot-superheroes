@@ -6,6 +6,7 @@ import java.util.UUID;
 import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @Log4j2
@@ -27,16 +28,19 @@ public class VillainController {
   }
 
   @DeleteMapping("/{id}")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
   public void deleteVillainById(@PathVariable("id") UUID id) {
     villainService.removeVillainById(id);
   }
 
   @PostMapping
+  @ResponseStatus(HttpStatus.CREATED)
   public Villain postVillain(@Valid @RequestBody Villain villain) {
     return villainService.addVillain(villain);
   }
 
   @PutMapping("/{id}")
+  @ResponseStatus(HttpStatus.NO_CONTENT)
   public void putVillain(
     @PathVariable("id") UUID id,
     @Valid @RequestBody Villain villain

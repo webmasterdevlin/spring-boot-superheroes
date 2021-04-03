@@ -1,9 +1,8 @@
 package com.example.superheroes.villain.service;
 
-import com.example.superheroes.exception.CharacterNotFoundException;
+import com.example.superheroes.exception.NotFoundException;
 import com.example.superheroes.villain.model.Villain;
 import com.example.superheroes.villain.repository.VillainRepository;
-import java.util.List;
 import java.util.UUID;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -39,10 +38,7 @@ public class VillainService {
     return villainRepository
       .findById(id)
       .orElseThrow(
-        () ->
-          new CharacterNotFoundException(
-            "Villain by id " + id + " was not found"
-          )
+        () -> new NotFoundException("Villain by id " + id + " was not found")
       );
   }
 }

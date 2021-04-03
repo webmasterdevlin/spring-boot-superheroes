@@ -25,7 +25,7 @@ public class HeroController {
   @GetMapping
   public ResponseEntity<List<Hero>> getHeroes() {
     var heroes = heroService.findAllHeroes();
-    return new ResponseEntity<>(heroes, HttpStatus.CREATED);
+    return new ResponseEntity<>(heroes, HttpStatus.OK);
   }
 
   @GetMapping("/{id}")
@@ -37,9 +37,9 @@ public class HeroController {
   }
 
   @DeleteMapping("/{id}")
-  public ResponseEntity<Void> deleteHeroById(@PathVariable("id") UUID id) {
+  public ResponseEntity<?> deleteHeroById(@PathVariable("id") UUID id) {
     heroService.removeHeroById(id);
-    return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
   }
 
   @PostMapping
@@ -49,11 +49,11 @@ public class HeroController {
   }
 
   @PutMapping("/{id}")
-  public ResponseEntity<Void> putHero(
+  public ResponseEntity<?> putHero(
     @PathVariable("id") UUID id,
     @Valid @RequestBody Hero hero
   ) {
     heroService.updateHero(id, hero);
-    return new ResponseEntity<>(null, HttpStatus.OK);
+    return new ResponseEntity<>(HttpStatus.OK);
   }
 }
