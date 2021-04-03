@@ -1,13 +1,13 @@
 package com.example.superheroes.jwt.filters;
 
-import com.example.superheroes.jwt.MyUserDetailsService;
+import com.example.superheroes.jwt.services.ApplicationUserDetailsService;
 import com.example.superheroes.jwt.util.JwtUtil;
 import java.io.IOException;
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,14 +15,13 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+@AllArgsConstructor
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {
 
-  @Autowired
-  private MyUserDetailsService userDetailsService;
+  private final ApplicationUserDetailsService userDetailsService;
 
-  @Autowired
-  private JwtUtil jwtUtil;
+  private final JwtUtil jwtUtil;
 
   @Override
   protected void doFilterInternal(
@@ -33,13 +32,13 @@ public class JwtRequestFilter extends OncePerRequestFilter {
     final String authorizationHeader = request.getHeader("Authorization");
 
     String username = null;
-    String jwt = null;
+    String token = null;
 
     if (
       authorizationHeader != null && authorizationHeader.startsWith("Bearer ")
     ) {
-      jwt = authorizationHeader.substring(7);
-      username = jwtUtil.extractUsername(jwt);
+      token = authorizationHeader.substring(7);
+      username = jwtUtil.extractUsername(token);
     }
 
     if (
@@ -49,8 +48,8 @@ public class JwtRequestFilter extends OncePerRequestFilter {
       UserDetails userDetails =
         this.userDetailsService.loadUserByUsername(username);
 
-      if (jwtUtil.validateToken(jwt, userDetails)) {
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
+      if (jwtUtil.validateToken(token, userDetails)) {
+        var usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(
           userDetails,
           null,
           userDetails.getAuthorities()

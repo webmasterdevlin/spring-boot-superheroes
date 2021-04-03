@@ -1,39 +1,27 @@
 package com.example.superheroes.jwt.controllers;
 
-import com.example.superheroes.jwt.MyUserDetailsService;
 import com.example.superheroes.jwt.models.AuthenticationRequest;
 import com.example.superheroes.jwt.models.AuthenticationResponse;
+import com.example.superheroes.jwt.services.ApplicationUserDetailsService;
 import com.example.superheroes.jwt.util.JwtUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@AllArgsConstructor
 class AuthenticateController {
 
-  @Autowired
-  private AuthenticationManager authenticationManager;
+  private final AuthenticationManager authenticationManager;
+  private final JwtUtil jwtTokenUtil;
+  private final ApplicationUserDetailsService userDetailsService;
 
-  @Autowired
-  private JwtUtil jwtTokenUtil;
-
-  @Autowired
-  private MyUserDetailsService userDetailsService;
-
-  @RequestMapping({ "/hello" })
-  public String firstPage() {
-    return "Hello World";
-  }
-
-  @RequestMapping(value = "/authenticate", method = RequestMethod.POST)
-  public ResponseEntity<?> createAuthenticationToken(
+  @RequestMapping(value = "/authenticate")
+  @ResponseStatus(HttpStatus.CREATED)
+  public AuthenticationResponse createAuthenticationToken(
     @RequestBody AuthenticationRequest authenticationRequest
   ) throws Exception {
     try {
@@ -47,12 +35,12 @@ class AuthenticateController {
       throw new Exception("Incorrect username or password", e);
     }
 
-    final UserDetails userDetails = userDetailsService.loadUserByUsername(
+    var userDetails = userDetailsService.loadUserByUsername(
       authenticationRequest.getUsername()
     );
+    System.out.println(userDetails);
+    var jwt = jwtTokenUtil.generateToken(userDetails);
 
-    final String jwt = jwtTokenUtil.generateToken(userDetails);
-
-    return ResponseEntity.ok(new AuthenticationResponse(jwt));
+    return new AuthenticationResponse(jwt);
   }
 }

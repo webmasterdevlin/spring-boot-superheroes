@@ -7,12 +7,14 @@ import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @Log4j2
 @AllArgsConstructor
 @RestController
 @RequestMapping(path = "api/v1/villains")
+@PreAuthorize("permitAll()")
 public class VillainController {
 
   private final VillainService villainService;

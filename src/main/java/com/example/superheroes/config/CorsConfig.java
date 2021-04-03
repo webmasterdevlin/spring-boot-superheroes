@@ -18,13 +18,14 @@ public class CorsConfig {
     this.appProperties = appProperties;
   }
 
+  @Value("${client.url}")
+  private String CLIENT_URL;
+
   @Bean
   CorsFilter corsFilter() {
     CorsConfiguration corsConfiguration = new CorsConfiguration();
     corsConfiguration.setAllowCredentials(true);
-    corsConfiguration.setAllowedOrigins(
-      Collections.singletonList(appProperties.getClientUrl())
-    );
+    corsConfiguration.setAllowedOrigins(Collections.singletonList(CLIENT_URL));
     corsConfiguration.setAllowedHeaders(
       Arrays.asList(
         "Origin",
