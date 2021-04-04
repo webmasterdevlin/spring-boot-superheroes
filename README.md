@@ -1,6 +1,7 @@
 ## Spring Boot API for Heroes application
 - Java 11
 - Lombok in Villain module
+- Prettier Java
 - JPA
 - Postgres 13
 - Open Api 3
