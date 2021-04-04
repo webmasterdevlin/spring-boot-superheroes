@@ -5,11 +5,15 @@ import java.util.Date;
 import java.util.UUID;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table
+@AllArgsConstructor
+@NoArgsConstructor
 public class AntiHeroEntity {
 
   @Id

@@ -3,13 +3,17 @@ package com.example.superheroes.villain.model;
 import java.util.UUID;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.redis.core.RedisHash;
 
 @RedisHash("Villain")
 @Data
 @Entity
 @Table
+@AllArgsConstructor
+@NoArgsConstructor
 public class Villain {
 
   @Id
