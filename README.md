@@ -8,6 +8,7 @@
   - slf4j in Hero module
   - log4j2 in Villain module  
 - JWT Auth
+    - Anti-Heroes is protected
 - JUnit Testing
 - Redis in Villain module
 
