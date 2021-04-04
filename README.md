@@ -10,7 +10,7 @@
   - log4j2 in Villain module  
 - JWT Auth
     - Anti-Heroes is protected
-- JUnit Testing
+- JUnit Testing with Assertj
 - Redis in Villain module
 
 #### Swagger ui

@@ -50,8 +50,7 @@ public class AntiHeroController {
   }
 
   @PostMapping
-  public AntiHeroDto postAntiHero(@Valid @RequestBody AntiHeroDto antiHeroDto)
-    throws Exception {
+  public AntiHeroDto postAntiHero(@Valid @RequestBody AntiHeroDto antiHeroDto) {
     var entity = convertToEntity(antiHeroDto);
     var antiHero = service.addAntiHero(entity);
 
@@ -62,7 +61,7 @@ public class AntiHeroController {
   public void putAntiHero(
     @PathVariable("id") UUID id,
     @Valid @RequestBody AntiHeroDto antiHeroDto
-  ) throws Exception {
+  ) {
     if (!id.equals(antiHeroDto.getId())) throw new ResponseStatusException(
       HttpStatus.BAD_REQUEST,
       "id does not match"
@@ -76,8 +75,7 @@ public class AntiHeroController {
     return mapper.map(entity, AntiHeroDto.class);
   }
 
-  private AntiHeroEntity convertToEntity(AntiHeroDto dto)
-    throws ParseException {
+  private AntiHeroEntity convertToEntity(AntiHeroDto dto) {
     return mapper.map(dto, AntiHeroEntity.class);
   }
 }
