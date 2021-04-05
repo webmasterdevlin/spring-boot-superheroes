@@ -36,6 +36,9 @@ public class Hero implements Serializable {
     this.knownAs = knownAs;
   }
 
+  // hero.lastName = "Duldulao";
+  // hero.setLastName = "Devlin"
+
   public Hero() {}
 
   public UUID getId() {

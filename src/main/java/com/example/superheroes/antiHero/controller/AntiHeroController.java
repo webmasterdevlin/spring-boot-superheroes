@@ -1,9 +1,8 @@
-package com.example.superheroes.antiHero.controllers;
+package com.example.superheroes.antiHero.controller;
 
-import com.example.superheroes.antiHero.dtos.AntiHeroDto;
-import com.example.superheroes.antiHero.entities.AntiHeroEntity;
-import com.example.superheroes.antiHero.services.AntiHeroService;
-import java.text.ParseException;
+import com.example.superheroes.antiHero.dto.AntiHeroDto;
+import com.example.superheroes.antiHero.entity.AntiHeroEntity;
+import com.example.superheroes.antiHero.service.AntiHeroService;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;

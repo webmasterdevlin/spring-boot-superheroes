@@ -1,8 +1,8 @@
-package com.example.superheroes.antiHero.services;
+package com.example.superheroes.antiHero.service;
 
-import com.example.superheroes.antiHero.entities.AntiHeroEntity;
-import com.example.superheroes.antiHero.interfaces.AntiHeroContract;
-import com.example.superheroes.antiHero.repositories.AntiHeroRepository;
+import com.example.superheroes.antiHero.contract.AntiHeroContract;
+import com.example.superheroes.antiHero.entity.AntiHeroEntity;
+import com.example.superheroes.antiHero.repository.AntiHeroRepository;
 import com.example.superheroes.exception.NotFoundException;
 import java.util.UUID;
 import lombok.AllArgsConstructor;

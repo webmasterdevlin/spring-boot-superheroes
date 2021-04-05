@@ -1,8 +1,7 @@
-package com.example.superheroes.antiHero.repositories;
+package com.example.superheroes.antiHero.repository;
 
-import com.example.superheroes.antiHero.entities.AntiHeroEntity;
+import com.example.superheroes.antiHero.entity.AntiHeroEntity;
 import java.util.UUID;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 

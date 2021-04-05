@@ -1,10 +1,10 @@
-package com.example.superheroes.antiHero.services;
+package com.example.superheroes.antiHero.service;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.verify;
 
-import com.example.superheroes.antiHero.entities.AntiHeroEntity;
-import com.example.superheroes.antiHero.repositories.AntiHeroRepository;
+import com.example.superheroes.antiHero.entity.AntiHeroEntity;
+import com.example.superheroes.antiHero.repository.AntiHeroRepository;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;

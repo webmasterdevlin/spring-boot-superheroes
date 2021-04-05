@@ -1,6 +1,6 @@
-package com.example.superheroes.antiHero.interfaces;
+package com.example.superheroes.antiHero.contract;
 
-import com.example.superheroes.antiHero.entities.AntiHeroEntity;
+import com.example.superheroes.antiHero.entity.AntiHeroEntity;
 import java.util.UUID;
 
 public interface AntiHeroContract {

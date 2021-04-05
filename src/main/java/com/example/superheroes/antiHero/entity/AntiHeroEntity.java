@@ -1,4 +1,4 @@
-package com.example.superheroes.antiHero.entities;
+package com.example.superheroes.antiHero.entity;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

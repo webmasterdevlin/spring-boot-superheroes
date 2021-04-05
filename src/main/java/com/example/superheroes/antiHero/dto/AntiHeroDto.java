@@ -1,4 +1,4 @@
-package com.example.superheroes.antiHero.dtos;
+package com.example.superheroes.antiHero.dto;
 
 import java.util.UUID;
 import javax.validation.constraints.NotNull;
