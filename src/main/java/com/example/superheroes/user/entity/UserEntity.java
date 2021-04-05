@@ -21,4 +21,9 @@ public class UserEntity {
   private String mobileNumber;
   private byte[] StoredHash;
   private byte[] StoredSalt;
+
+  public UserEntity(String email, String mobileNumber) {
+    this.email = email;
+    this.mobileNumber = mobileNumber;
+  }
 }

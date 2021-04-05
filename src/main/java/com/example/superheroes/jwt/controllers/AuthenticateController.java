@@ -4,6 +4,7 @@ import com.example.superheroes.jwt.models.AuthenticationRequest;
 import com.example.superheroes.jwt.models.AuthenticationResponse;
 import com.example.superheroes.jwt.services.ApplicationUserDetailsService;
 import com.example.superheroes.jwt.util.JwtUtil;
+import com.example.superheroes.user.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,6 +19,7 @@ class AuthenticateController {
   private final AuthenticationManager authenticationManager;
   private final JwtUtil jwtTokenUtil;
   private final ApplicationUserDetailsService userDetailsService;
+  private final UserService userService;
 
   @RequestMapping(value = "/authenticate")
   @ResponseStatus(HttpStatus.CREATED)
@@ -38,6 +40,7 @@ class AuthenticateController {
     var userDetails = userDetailsService.loadUserByUsername(
       authenticationRequest.getUsername()
     );
+
     System.out.println(userDetails);
     var jwt = jwtTokenUtil.generateToken(userDetails);
 
