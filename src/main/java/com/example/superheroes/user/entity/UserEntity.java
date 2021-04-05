@@ -21,8 +21,8 @@ public class UserEntity {
   private String email;
 
   private String mobileNumber;
-  private byte[] StoredHash;
-  private byte[] StoredSalt;
+  private byte[] storedHash;
+  private byte[] storedSalt;
 
   public UserEntity(String email, String mobileNumber) {
     this.email = email;
