@@ -45,9 +45,8 @@ public class UserController {
   @PutMapping("/api/v1/users/{id}")
   public void putUser(
     @PathVariable("id") UUID id,
-    @Valid @RequestBody UserDto userDto,
-    String password
+    @Valid @RequestBody UserDto userDto
   ) throws NoSuchAlgorithmException {
-    userService.updateUser(id, userDto, password);
+    userService.updateUser(id, userDto, userDto.getPassword());
   }
 }
