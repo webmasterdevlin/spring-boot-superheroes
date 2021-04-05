@@ -16,4 +16,7 @@ public interface UserRepository extends JpaRepository<UserEntity, UUID> {
     "WHERE u.email = ?1"
   )
   Boolean selectExistsEmail(String email);
+
+  // @Column(unique = true) is needed in entity
+  UserEntity findByEmail(String email);
 }

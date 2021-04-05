@@ -1,11 +1,16 @@
 package com.example.superheroes.jwt.controllers;
 
+import com.example.superheroes.exception.BadRequestException;
 import com.example.superheroes.jwt.models.AuthenticationRequest;
 import com.example.superheroes.jwt.models.AuthenticationResponse;
 import com.example.superheroes.jwt.services.ApplicationUserDetailsService;
 import com.example.superheroes.jwt.util.JwtUtil;
+import com.example.superheroes.user.entity.UserEntity;
 import com.example.superheroes.user.service.UserService;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -19,27 +24,21 @@ class AuthenticateController {
   private final AuthenticationManager authenticationManager;
   private final JwtUtil jwtTokenUtil;
   private final ApplicationUserDetailsService userDetailsService;
-  private final UserService userService;
 
   @RequestMapping(value = "/authenticate")
   @ResponseStatus(HttpStatus.CREATED)
-  public AuthenticationResponse createAuthenticationToken(
-    @RequestBody AuthenticationRequest authenticationRequest
+  public AuthenticationResponse authenticate(
+    @RequestBody AuthenticationRequest req
   ) throws Exception {
+    UserEntity user;
+
     try {
-      authenticationManager.authenticate(
-        new UsernamePasswordAuthenticationToken(
-          authenticationRequest.getUsername(),
-          authenticationRequest.getPassword()
-        )
-      );
+      user = userDetailsService.authenticate(req.getEmail(), req.getPassword());
     } catch (BadCredentialsException e) {
       throw new Exception("Incorrect username or password", e);
     }
 
-    var userDetails = userDetailsService.loadUserByUsername(
-      authenticationRequest.getUsername()
-    );
+    var userDetails = userDetailsService.loadUserByUsername(user.getEmail());
 
     System.out.println(userDetails);
     var jwt = jwtTokenUtil.generateToken(userDetails);

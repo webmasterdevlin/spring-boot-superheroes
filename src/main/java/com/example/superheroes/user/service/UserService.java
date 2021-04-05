@@ -23,6 +23,10 @@ public class UserService {
   private final UserRepository repo;
   private final ModelMapper mapper;
 
+  public UserEntity searchByEmail(String email) {
+    return repo.findByEmail(email);
+  }
+
   public List<UserDto> findAllUsers() {
     var userEntityList = new ArrayList<>(repo.findAll());
 
@@ -92,7 +96,7 @@ public class UserService {
 
   private byte[] createSalt() {
     var random = new SecureRandom();
-    var salt = new byte[16];
+    var salt = new byte[128];
     random.nextBytes(salt);
 
     return salt;

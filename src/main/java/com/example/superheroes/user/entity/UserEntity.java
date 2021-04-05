@@ -17,7 +17,9 @@ public class UserEntity {
   @Column(nullable = false, updatable = false)
   private UUID id;
 
+  @Column(unique = true)
   private String email;
+
   private String mobileNumber;
   private byte[] StoredHash;
   private byte[] StoredSalt;
