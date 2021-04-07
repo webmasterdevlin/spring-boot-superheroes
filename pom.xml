@@ -14,7 +14,7 @@
 	<name>superheroes</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>16</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -180,7 +180,7 @@
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
-							<version>1.18.18</version>
+							<version>1.18.20</version>
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
