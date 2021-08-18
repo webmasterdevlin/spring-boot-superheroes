@@ -1,20 +1,14 @@
 package com.example.superheroes.jwt.controllers;
 
-import com.example.superheroes.exception.BadRequestException;
 import com.example.superheroes.jwt.models.AuthenticationRequest;
 import com.example.superheroes.jwt.models.AuthenticationResponse;
 import com.example.superheroes.jwt.services.ApplicationUserDetailsService;
 import com.example.superheroes.jwt.util.JwtUtil;
 import com.example.superheroes.user.entity.UserEntity;
-import com.example.superheroes.user.service.UserService;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

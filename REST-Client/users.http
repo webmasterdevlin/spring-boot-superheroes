@@ -1,0 +1,31 @@
+###
+GET http://localhost:8080/api/v1/users
+Accept: application/json
+
+###
+DELETE http://localhost:8080/api/v1/users/6457a746-8067-422b-bba7-c6ddb675706e
+Accept: application/json
+
+###
+POST http://localhost:8080/register
+Content-Type: application/json
+Accept: application/json
+
+{
+  "email": "johndoe@gmail.com",
+  "mobileNumber": "90901010",
+  "password": "Pass123!"
+}
+
+###
+PUT http://localhost:8080/api/v1/users/058cf4cf-cdb7-4b7f-acc9-ad0f2f9869f6
+Content-Type: application/json
+
+{
+  "id": "47b647c5-cd8e-45f0-a21b-6319efe9d4c1",
+  "firstName": "John - Updated",
+  "lastName": "Doe - Updated",
+  "knownAs": "JD - Updated",
+  "house": "Florida - Updated"
+}
+
