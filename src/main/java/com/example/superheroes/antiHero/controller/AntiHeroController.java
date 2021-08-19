@@ -28,7 +28,7 @@ public class AntiHeroController {
 
   @GetMapping
   public List<AntiHeroDto> getAntiHeroes() {
-    // Mapstruct is another dto mapper but it's not straight forward
+    // Mapstruct is another dto mapper, but it's not straight forward
     var antiHeroList = StreamSupport
       .stream(service.findAllAntiHeroes().spliterator(), false)
       .collect(Collectors.toList());
