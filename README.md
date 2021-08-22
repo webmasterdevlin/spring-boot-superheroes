@@ -41,6 +41,7 @@
     }
   }
 ```
+- add a MvcConfiguration class in Spring Boot backend targeting public folder
 
 
 #### Packaging Locally
@@ -58,8 +59,3 @@ mvn package
 jar -jar name-of-your-apps-jar-file-0.0.1.jar
 ```
 - check localhost:8080
-
-
-#### TODO
-- fix routing issues
-- https://keepgrowing.in/java/springboot/make-spring-boot-surrender-routing-control-to-angular/
