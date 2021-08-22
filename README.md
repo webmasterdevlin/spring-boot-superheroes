@@ -17,3 +17,43 @@
 - http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
 
 
+#### Package Spring Boot and Angular in one Jar
+- create a directory and name it frontend or client-app
+- use dist/name-of-your-app directory for Angular or build directory for React in
+```xml
+<fileset dir="${project.basedir}/frontend/dist/name-of-your-app"/>
+```
+- add proxies in the package.json of Angular
+
+```json
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:8080/api",
+      "ws": true
+    },
+    "/authenticate": {
+      "target": "http://localhost:8080/authenticate",
+      "ws": true
+    },
+    "/register": {
+      "target": "http://localhost:8080/register",
+      "ws": true
+    }
+  }
+```
+
+
+#### Packaging Locally
+- use Java 16
+- you can use sdkman for sdk and java versions management
+- install maven
+- move angular project to the root directory of Spring Boot 2 named frontend or client-app or whatever
+- go to root directory of Spring Boot 2 and run the below commands
+```zsh
+mvn clean
+mvn package
+ ```
+- go to target directory and run the below commands
+```zsh
+jar -jar name-of-your-apps-jar-file-0.0.1.jar
+```
