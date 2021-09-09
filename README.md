@@ -59,3 +59,10 @@ mvn package
 jar -jar name-of-your-apps-jar-file-0.0.1.jar
 ```
 - check localhost:8080
+
+
+
+#### More info
+- https://frakton.com/utilizing-maven-front-end-plugin-for-angular-spring-boot/
+- https://www.kantega.no/blogg/webapp-with-create-react-app-and-spring-boot
+- https://github.com/eirslett/frontend-maven-plugin
