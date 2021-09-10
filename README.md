@@ -26,6 +26,7 @@
 - add proxies in the package.json of Angular
 
 ```json
+{
   "proxy": {
     "/api": {
       "target": "http://localhost:8080/api",
@@ -40,6 +41,7 @@
       "ws": true
     }
   }
+}
 ```
 - add a MvcConfiguration class in Spring Boot backend targeting public folder
 
@@ -58,6 +60,7 @@ mvn package
 ```zsh
 jar -jar name-of-your-apps-jar-file-0.0.1.jar
 ```
+or just run your IntelliJ IDEA
 - check localhost:8080
 
 
