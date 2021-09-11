@@ -48,7 +48,7 @@
 
 #### Packaging Locally
 - use Java 16 or Java 17
-- you can use sdkman for sdk and java versions management
+- you can use sdkman for sdk which is a java versions management
 
 ```zsh
 sdk list java
