@@ -47,8 +47,15 @@
 
 
 #### Packaging Locally
-- use Java 16
+- use Java 16 or Java 17
 - you can use sdkman for sdk and java versions management
+
+```zsh
+sdk list java
+sdk install java 16.0.1.hs-adpt
+sdk use java 16.0.1.hs-adpt
+```
+
 - install maven
 - move angular project to the root directory of Spring Boot 2 named frontend or client-app or whatever
 - go to root directory of Spring Boot 2 and run the below commands
