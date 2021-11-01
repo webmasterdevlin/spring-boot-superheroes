@@ -1,5 +1,5 @@
 ## Spring Boot API for Heroes application
-- Java 11
+- Java 17
 - Lombok in Villain module
 - Prettier Java
 - JPA
@@ -47,13 +47,13 @@
 
 
 #### Packaging Locally
-- use Java 16 or Java 17
+- use Java 17
 - you can use sdkman for sdk which is a java versions management
 
 ```zsh
 sdk list java
-sdk install java 16.0.1.hs-adpt
-sdk use java 16.0.1.hs-adpt
+sdk install java 17.0.1-tem 
+sdk use java 17.0.1-tem 
 ```
 
 - install maven
