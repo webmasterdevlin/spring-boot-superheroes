@@ -1,9 +1,7 @@
 package com.example.superheroes.user.repository;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
-import com.example.superheroes.user.data.UserDto;
 import com.example.superheroes.user.entity.UserEntity;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;

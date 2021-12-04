@@ -1,6 +1,7 @@
 package com.example.superheroes.jwt.models;
 
 import java.io.Serializable;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,6 +11,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class AuthenticationRequest implements Serializable {
 
-  private String email;
-  private String password;
+    private String email;
+    private String password;
 }

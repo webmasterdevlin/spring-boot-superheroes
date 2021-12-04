@@ -23,33 +23,33 @@ import java.util.UUID;
 @NoArgsConstructor
 public class AntiHeroEntity {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO, generator = "UUID")
-  @Column(nullable = false, updatable = false)
-  private UUID id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "UUID")
+    @Column(nullable = false, updatable = false)
+    private UUID id;
 
-  @NotNull(message = "First Name is required")
-  private String firstName;
+    @NotNull(message = "First Name is required")
+    private String firstName;
 
-  private String lastName;
-  private String house;
-  private String knownAs;
-  private String createdAt = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss z")
-    .format(new Date());
+    private String lastName;
+    private String house;
+    private String knownAs;
+    private String createdAt = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss z")
+            .format(new Date());
 
 
-  /*These 2 methods, equals and hashCode, below are required if @Data is not used*/
+    /*These 2 methods, equals and hashCode, below are required if @Data is not used*/
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-    AntiHeroEntity that = (AntiHeroEntity) o;
-    return id != null && Objects.equals(id, that.id);
-  }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        AntiHeroEntity that = (AntiHeroEntity) o;
+        return id != null && Objects.equals(id, that.id);
+    }
 
-  @Override
-  public int hashCode() {
-    return getClass().hashCode();
-  }
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }

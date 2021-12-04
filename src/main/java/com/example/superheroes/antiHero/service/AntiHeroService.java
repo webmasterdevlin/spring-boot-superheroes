@@ -4,7 +4,9 @@ import com.example.superheroes.antiHero.contract.AntiHeroContract;
 import com.example.superheroes.antiHero.entity.AntiHeroEntity;
 import com.example.superheroes.antiHero.repository.AntiHeroRepository;
 import com.example.superheroes.exception.NotFoundException;
+
 import java.util.UUID;
+
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,39 +14,39 @@ import org.springframework.stereotype.Service;
 @Service
 public class AntiHeroService implements AntiHeroContract {
 
-  private final AntiHeroRepository repo;
+    private final AntiHeroRepository repo;
 
-  @Override
-  public Iterable<AntiHeroEntity> findAllAntiHeroes() {
-    return repo.findAll();
-  }
+    @Override
+    public Iterable<AntiHeroEntity> findAllAntiHeroes() {
+        return repo.findAll();
+    }
 
-  @Override
-  public AntiHeroEntity findAntiHeroById(UUID id) {
-    return findOrThrow(id);
-  }
+    @Override
+    public AntiHeroEntity findAntiHeroById(UUID id) {
+        return findOrThrow(id);
+    }
 
-  @Override
-  public void removeAntiHeroById(UUID id) {
-    repo.deleteById(id);
-  }
+    @Override
+    public void removeAntiHeroById(UUID id) {
+        repo.deleteById(id);
+    }
 
-  @Override
-  public AntiHeroEntity addAntiHero(AntiHeroEntity antiHero) {
-    return repo.save(antiHero);
-  }
+    @Override
+    public AntiHeroEntity addAntiHero(AntiHeroEntity antiHero) {
+        return repo.save(antiHero);
+    }
 
-  @Override
-  public void updateAntiHero(UUID id, AntiHeroEntity antiHero) {
-    findOrThrow(id);
-    repo.save(antiHero);
-  }
+    @Override
+    public void updateAntiHero(UUID id, AntiHeroEntity antiHero) {
+        findOrThrow(id);
+        repo.save(antiHero);
+    }
 
-  private AntiHeroEntity findOrThrow(final UUID id) {
-    return repo
-      .findById(id)
-      .orElseThrow(
-        () -> new NotFoundException("Anti-hero by id " + id + " was not found")
-      );
-  }
+    private AntiHeroEntity findOrThrow(final UUID id) {
+        return repo
+                .findById(id)
+                .orElseThrow(
+                        () -> new NotFoundException("Anti-hero by id " + id + " was not found")
+                );
+    }
 }
