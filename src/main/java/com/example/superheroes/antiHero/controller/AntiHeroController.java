@@ -12,7 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize; // for authorization
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -20,7 +20,7 @@ import org.springframework.web.server.ResponseStatusException;
 @AllArgsConstructor
 @RestController
 @RequestMapping("api/v1/anti-heroes")
-@PreAuthorize("isAuthenticated()")
+@PreAuthorize("isAuthenticated()") // for authorization
 public class AntiHeroController {
 
   private final AntiHeroService service;
@@ -30,8 +30,7 @@ public class AntiHeroController {
   public List<AntiHeroDto> getAntiHeroes() {
     // Mapstruct is another dto mapper, but it's not straight forward
     var antiHeroList = StreamSupport
-      .stream(service.findAllAntiHeroes().spliterator(), false)
-      .collect(Collectors.toList());
+            .stream(service.findAllAntiHeroes().spliterator(), false).toList();
 
     return antiHeroList
       .stream()

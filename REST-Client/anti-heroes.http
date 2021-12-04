@@ -1,7 +1,7 @@
 ###
 GET http://localhost:8080/api/v1/anti-heroes
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huZG9lQGdtYWlsLmNvbSIsImlhdCI6MTYyOTM4NjY0MSwiZXhwIjoxNjI5NDIyNjQxfQ.uW_woCYx61WS5EIRsk7I8xdXtOStgXegK_sJJwyZXDE
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huZG9lQGdtYWlsLmNvbSIsImlhdCI6MTYzODYyNzU3MywiZXhwIjoxNjM4NjYzNTczfQ.GvprSDOkZpHlF-2oZb-TSJkqUwaAWnOwrL18gmElaZo
 
 ###
 DELETE http://localhost:8080/api/v1/anti-heroes/6457a746-8067-422b-bba7-c6ddb675706e
