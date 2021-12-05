@@ -156,3 +156,15 @@
 - send GET http://localhost:8080/api/v1/anti-heroes, [{...}] should be the response
 - send PUT http://localhost:8080/api/v1/anti-heroes/{:id}
 - full crud should be working
+
+## Heroku
+- create a GitHub account
+- create a Heroku account
+- create a new app
+- create a new database
+- connect the database to the app
+
+## GitHub Actions
+
+- see https://github.com/marketplace/actions/deploy-to-heroku
+- rename master branch to main branch in the branches page of your GitHub Repo
