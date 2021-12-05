@@ -19,7 +19,7 @@ public class CorsConfig {
         this.appProperties = appProperties;
     }
 
-    @Value("${client.url}")
+    @Value("${app.clientUrl}")
     private String CLIENT_URL;
 
     @Bean
