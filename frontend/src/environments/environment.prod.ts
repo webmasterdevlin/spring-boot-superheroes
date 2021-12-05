@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrlBase: "/api/v1/",
+  apiUrlBase: "https://superheroes-application.herokuapp.com/",
 };

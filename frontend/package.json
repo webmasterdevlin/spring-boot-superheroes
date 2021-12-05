@@ -78,15 +78,15 @@
   },
   "proxy": {
     "/api": {
-      "target": "http://localhost:8080/api",
+      "target": "https://superheroes-application.herokuapp.com/api",
       "ws": true
     },
     "/authenticate": {
-      "target": "http://localhost:8080/authenticate",
+      "target": "https://superheroes-application.herokuapp.com/authenticate",
       "ws": true
     },
     "/register": {
-      "target": "http://localhost:8080/register",
+      "target": "https://superheroes-application.herokuapp.com/register",
       "ws": true
     }
   }
