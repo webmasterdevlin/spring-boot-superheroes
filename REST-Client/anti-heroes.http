@@ -1,5 +1,5 @@
 ###
-GET https://superheroes-application.herokuapp.com/api/v1/anti-heroes
+GET http://localhost:8080/api/v1/anti-heroes
 Accept: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2huZG9lQGdtYWlsLmNvbSIsImlhdCI6MTYzODcxNDE2MiwiZXhwIjoxNjM4NzUwMTYyfQ.p2rkMzIENnkWIDF0mjJJ-o2LPzUFSaJivETCkb3g06U
 
