@@ -21,7 +21,7 @@ import java.util.stream.StreamSupport;
 @AllArgsConstructor
 @RestController
 @RequestMapping("api/v1/anti-heroes")
-@PreAuthorize("isAuthenticated()") // for authorization
+//@PreAuthorize("isAuthenticated()") // for authorization
 public class AntiHeroController {
 
     private final AntiHeroService service;

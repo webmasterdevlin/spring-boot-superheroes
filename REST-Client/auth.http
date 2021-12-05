@@ -1,5 +1,5 @@
 ###
-POST http://localhost:8080/authenticate
+POST https://superheroes-application.herokuapp.com/authenticate
 Content-Type: application/json
 Accept: application/json
 
