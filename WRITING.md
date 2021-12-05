@@ -165,9 +165,10 @@
 - connect the database to the app
 - add a system.properties file in the root directory
 - add a GitHub secret, HEROKU_API_KEY, for the heroku api key which can be found on your account settings
+- add a JWT_SECRET in the heroku's settings -> config vars
 
 ## GitHub Actions
-
-- see https://github.com/marketplace/actions/deploy-to-heroku
 - create a GitHub workflow yml file
-- rename master branch to main branch on the branches page of your GitHub Repo
+- see https://github.com/marketplace/actions/deploy-to-heroku
+- rename your master branch to main branch on the branches page of your GitHub Repo
+- future push to your repo will deploy to Heroku
