@@ -160,11 +160,14 @@
 ## Heroku
 - create a GitHub account
 - create a Heroku account
-- create a new app
-- create a new database
+- create a new app on Heroku
+- create a new postgres database on Heroku
 - connect the database to the app
+- add a system.properties file in the root directory
+- add a GitHub secret, HEROKU_API_KEY, for the heroku api key which can be found on your account settings
 
 ## GitHub Actions
 
 - see https://github.com/marketplace/actions/deploy-to-heroku
-- rename master branch to main branch in the branches page of your GitHub Repo
+- create a GitHub workflow yml file
+- rename master branch to main branch on the branches page of your GitHub Repo
