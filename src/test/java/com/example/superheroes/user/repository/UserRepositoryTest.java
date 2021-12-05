@@ -1,7 +1,9 @@
 package com.example.superheroes.user.repository;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.junit.jupiter.api.Assertions.*;
 
+import com.example.superheroes.user.dto.UserDto;
 import com.example.superheroes.user.entity.UserEntity;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -11,38 +13,38 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 @DataJpaTest
 class UserRepositoryTest {
 
-  @Autowired
-  private UserRepository underTest;
+    @Autowired
+    private UserRepository underTest;
 
-  @AfterEach
-  void tearDown() {
-    underTest.deleteAll();
-  }
+    @AfterEach
+    void tearDown() {
+        underTest.deleteAll();
+    }
 
-  @Test
-  void itShouldCheckWhenUserEmailExists() {
-    // give
-    String email = "dennis@gmail.com";
-    UserEntity user = new UserEntity(email, "21398732478");
+    @Test
+    void itShouldCheckWhenUserEmailExists() {
+        // give
+        String email = "dennis@gmail.com";
+        UserEntity user = new UserEntity(email, "21398732478");
 
-    underTest.save(user);
+        underTest.save(user);
 
-    // when
-    boolean expected = underTest.selectExistsEmail(email);
+        // when
+        boolean expected = underTest.selectExistsEmail(email);
 
-    // then
-    assertThat(expected).isTrue();
-  }
+        // then
+        assertThat(expected).isTrue();
+    }
 
-  @Test
-  void itShouldCheckWhenUserEmailDoesNotExists() {
-    // given
-    String email = "dennis@gmail.com";
+    @Test
+    void itShouldCheckWhenUserEmailDoesNotExists() {
+        // given
+        String email = "dennis@gmail.com";
 
-    // when
-    boolean expected = underTest.selectExistsEmail(email);
+        // when
+        boolean expected = underTest.selectExistsEmail(email);
 
-    // then
-    assertThat(expected).isFalse();
-  }
+        // then
+        assertThat(expected).isFalse();
+    }
 }

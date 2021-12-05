@@ -5,18 +5,18 @@ import com.example.superheroes.exception.NotFoundException;
 import com.example.superheroes.user.dto.UserDto;
 import com.example.superheroes.user.entity.UserEntity;
 import com.example.superheroes.user.repository.UserRepository;
+import lombok.AllArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
-import java.security.*;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
-
-import lombok.AllArgsConstructor;
-import org.modelmapper.ModelMapper;
-import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @Service

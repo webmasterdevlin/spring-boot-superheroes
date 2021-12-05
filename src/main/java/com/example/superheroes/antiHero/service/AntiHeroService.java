@@ -4,11 +4,10 @@ import com.example.superheroes.antiHero.contract.AntiHeroContract;
 import com.example.superheroes.antiHero.entity.AntiHeroEntity;
 import com.example.superheroes.antiHero.repository.AntiHeroRepository;
 import com.example.superheroes.exception.NotFoundException;
-
-import java.util.UUID;
-
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.UUID;
 
 @AllArgsConstructor
 @Service

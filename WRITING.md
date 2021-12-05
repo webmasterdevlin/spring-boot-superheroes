@@ -3,9 +3,8 @@
 - check Java version by running `java -version`
 - check if `java -version` returns `17.*`
 - use spring initializr to create a new Spring Boot project
-- add dependencies to such as Spring Boot DevTools, Lombok, Spring Web, Rest Repositories, Spring Security, Spring Data JPA, H2 Database, PostgreSQL Driver 
+- add dependencies to such as Spring Boot DevTools, Lombok, Spring Web, Rest Repositories, Spring Security, Spring Data JPA, H2 Database, PostgreSQL Driver
 - use Spring 2.6.0, Java 17, and Maven
-- rename application.properties to application-dev.properties
 
 ## Tips
 - press option + command + L to format your code
@@ -66,12 +65,13 @@
 - create REST-Client folder in the root directory
 - write an anti-heroes.http file inside the REST-Client folder
 - send/trigger GET http://localhost:8080/api/v1/anti-heroes, [] empty array should be the response
-- send/trigger POST http://localhost:8080/api/v1/anti-heroes 
+- send/trigger POST http://localhost:8080/api/v1/anti-heroes
 - send/trigger another get request, GET http://localhost:8080/api/v1/anti-heroes, [{...}] should be the response
 
 ## Swagger UI or OpenAPI
 - add springdoc-openapi-ui and springdoc-openapi-data-rest in the pom.xml
 - write SwaggerConfig configuration inside the config package for custom Swagger UI
+- update the application.properties with app.version, app.name, and app.description
 
 ## User
 - create a user package under the com.example.superheroes folder
@@ -110,7 +110,7 @@
 - add @PreAuthorize in the AntiHeroController
 - send a get request to http://localhost:8080/api/v1/anti-heroes
 - check if the response is 403 Forbidden
-- login as a user by, 
+- login as a user by,
 - triggering the POST http://localhost:8080/register
 - triggering the POST http://localhost:8080/authenticate
 - use the token in the Authorization header of REST-Client/anti-heroes.http
@@ -141,7 +141,13 @@
 - check if the docker client is running
 - check if a postgres container is running
 - create a new postgres database and name it springDevDb
-- update the application-dev.properties with the postgres database url etc.
+- update the application.properties with the postgres database url etc.
+- go to Run menu of Intellij IDE and select Edit Configuration
+- click the plus button and select the Application
+- name it SuperheroesApplication
+- add the path of the main class which is SuperheroesApplication under com.example.superheroes
+- add a new Environment variable and name it DATABASE_URL, DATABASE_USERNAME, and DATABASE_PASSWORD
+- click apply and ok
 - run the application
 - send POST http://localhost:8080/register
 - send  POST http://localhost:8080/authenticate

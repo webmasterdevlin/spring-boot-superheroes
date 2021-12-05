@@ -1,10 +1,10 @@
 package com.example.superheroes.antiHero.dto;
 
-import java.util.UUID;
-import javax.validation.constraints.NotNull;
-
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.validation.constraints.NotNull;
+import java.util.UUID;
 
 @Getter
 @Setter
