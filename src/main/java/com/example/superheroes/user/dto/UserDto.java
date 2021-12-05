@@ -1,16 +1,19 @@
-package com.example.superheroes.jwt.models;
-
-import java.io.Serializable;
+package com.example.superheroes.user.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class AuthenticationRequest implements Serializable {
+@NoArgsConstructor
+public class UserDto {
+
+    private UUID id;
 
     private String email;
+    private String mobileNumber;
     private String password;
 }

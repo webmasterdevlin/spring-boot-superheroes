@@ -8,17 +8,17 @@ import org.springframework.context.annotation.Bean;
 
 public class SwaggerConfig {
 
-  @Bean
-  public OpenAPI customOpenAPI(
-    @Value("${springdoc.version}") String appVersion
-  ) {
-    return new OpenAPI()
-      .components(new Components())
-      .info(
-        new io.swagger.v3.oas.models.info.Info()
-          .title("Superheroes API")
-          .version(appVersion)
-          .license(new License().name("Apache 2.0").url("http://springdoc.org"))
-      );
-  }
+    @Bean
+    public OpenAPI customOpenAPI(
+            @Value("${springdoc.version}") String appVersion
+    ) {
+        return new OpenAPI()
+                .components(new Components())
+                .info(
+                        new io.swagger.v3.oas.models.info.Info()
+                                .title("Superheroes API")
+                                .version(appVersion)
+                                .license(new License().name("Apache 2.0").url("http://springdoc.org"))
+                );
+    }
 }

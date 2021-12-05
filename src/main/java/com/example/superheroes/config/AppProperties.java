@@ -7,22 +7,22 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties("app")
 public class AppProperties {
 
-  private String clientUrl;
-  private String jwtSecret;
+    private String clientUrl;
+    private String jwtSecret;
 
-  public String getClientUrl() {
-    return clientUrl;
-  }
+    public String getClientUrl() {
+        return clientUrl;
+    }
 
-  public void setClientUrl(String clientUrl) {
-    this.clientUrl = clientUrl;
-  }
+    public void setClientUrl(String clientUrl) {
+        this.clientUrl = clientUrl;
+    }
 
-  public String getJwtSecret() {
-    return jwtSecret;
-  }
+    public String getJwtSecret() {
+        return jwtSecret;
+    }
 
-  public void setJwtSecret(String jwtSecret) {
-    this.jwtSecret = jwtSecret;
-  }
+    public void setJwtSecret(String jwtSecret) {
+        this.jwtSecret = jwtSecret;
+    }
 }
