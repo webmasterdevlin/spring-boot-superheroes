@@ -4,6 +4,7 @@
 - check if `java -version` returns `17.*`
 - use spring initializr to create a new Spring Boot project
 - add dependencies to such as Spring Boot DevTools, Lombok, Spring Web, Rest Repositories, Spring Security, Spring Data JPA, H2 Database, PostgreSQL Driver 
+- use Spring 2.6.0, Java 17, and Maven
 - rename application.properties to application-dev.properties
 
 ## Tips
@@ -12,8 +13,8 @@
 - use docker client for database
 
 ## Entity
-- add javax.validation
-- add spring-boot-starter-validation
+- add javax.validation in the pom.xml
+- add spring-boot-starter-validation in the pom.xml
 - create an antiHero package inside the com.example.superheroes folder
 - create an entity package inside the antiHero package
 - write an AntiHeroEntity class inside the entity package
@@ -64,9 +65,9 @@
 ## REST-Client for Postman/Insomnia replacement
 - create REST-Client folder in the root directory
 - write an anti-heroes.http file inside the REST-Client folder
-- send a get request, [] empty array should be the response
-- send a post request
-- send another get request, [{...}] should be the response
+- send/trigger GET http://localhost:8080/api/v1/anti-heroes, [] empty array should be the response
+- send/trigger POST http://localhost:8080/api/v1/anti-heroes 
+- send/trigger another get request, GET http://localhost:8080/api/v1/anti-heroes, [{...}] should be the response
 
 ## Swagger UI or OpenAPI
 - add springdoc-openapi-ui and springdoc-openapi-data-rest in the pom.xml
@@ -104,3 +105,48 @@
 - check the response if an object is returned
 - trigger the POST http://localhost:8080/authenticate
 - check if a token is returned
+
+## Protected endpoint
+- add @PreAuthorize in the AntiHeroController
+- send a get request to http://localhost:8080/api/v1/anti-heroes
+- check if the response is 403 Forbidden
+- login as a user by, 
+- triggering the POST http://localhost:8080/register
+- triggering the POST http://localhost:8080/authenticate
+- use the token in the Authorization header of REST-Client/anti-heroes.http
+- send another get request to http://localhost:8080/api/v1/anti-heroes
+- check if the response is 200 OK []
+
+## Redis Caching
+- add spring-data-redis and jedis in the pom.xml
+- write RedisConfig configuration in config package.
+- update the SuperheroesApplication class with @EnableCaching
+- run the application
+
+## Health Checks
+- add spring-boot-starter-actuator in the pom.xml
+- write health.http file inside the REST-Client folder
+- trigger GET http://localhost:8080/actuator/health to see status UP
+
+## Automated Tests
+- add a resources package under the test folder
+- in the resources package, write an application-test.properties
+- create a repository package under the java/com.example.superheroes folder
+- write a UserRepositoryTest class, repository/UserRepositoryTest.java
+- create a service package under the java/com.example.superheroes folder
+- write an AntiHeroServiceTest class, service/AntiHeroServiceTest.java
+- run the tests in UserRepositoryTest and AntiHeroServiceTest
+
+## Postgres SQL Database
+- check if the docker client is running
+- check if a postgres container is running
+- create a new postgres database and name it springDevDb
+- update the application-dev.properties with the postgres database url etc.
+- run the application
+- send POST http://localhost:8080/register
+- send  POST http://localhost:8080/authenticate
+- send GET http://localhost:8080/api/v1/anti-heroes, [] empty array should be the response
+- send POST http://localhost:8080/api/v1/anti-heroes
+- send GET http://localhost:8080/api/v1/anti-heroes, [{...}] should be the response
+- send PUT http://localhost:8080/api/v1/anti-heroes/{:id}
+- full crud should be working
