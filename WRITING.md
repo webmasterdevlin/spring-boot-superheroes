@@ -160,9 +160,12 @@
 ## Heroku
 - create a GitHub account
 - create a Heroku account
-- create a new app on Heroku
-- create a new postgres database on Heroku
+- create a new app on Heroku and choose your region without pipeline
+- create a new postgres database on Heroku by using the add-on Postgres
 - connect the database to the app
+- create tables for the database through here https://data.heroku.com/dataclips
+- copy the sql scripts from the sql file in the root folder and paste it on the dataclips query dashboard
+- you can also create your own sql scripts and paste them on the dataclips query dashboard
 - add a system.properties file in the root directory
 - add a GitHub secret, HEROKU_API_KEY, for the heroku api key which can be found on your account settings
 - add a JWT_SECRET in the heroku's settings -> config vars
