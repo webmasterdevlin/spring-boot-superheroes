@@ -148,6 +148,7 @@
 - add the path of the main class which is SuperheroesApplication under com.example.superheroes
 - add a new Environment variable and name it DATABASE_URL, DATABASE_USERNAME, and DATABASE_PASSWORD
 - click apply and ok
+- double-check the npm build of the Angular script has --prod flag
 - run the application
 - send POST http://localhost:8080/register
 - send  POST http://localhost:8080/authenticate
@@ -156,3 +157,22 @@
 - send GET http://localhost:8080/api/v1/anti-heroes, [{...}] should be the response
 - send PUT http://localhost:8080/api/v1/anti-heroes/{:id}
 - full crud should be working
+
+## Heroku
+- create a GitHub account
+- create a Heroku account
+- create a new app on Heroku and choose your region without pipeline
+- create a new postgres database on Heroku by using the add-on Postgres
+- connect the database to the app
+- create tables for the database through here https://data.heroku.com/dataclips
+- copy the sql scripts from the sql file in the root folder and paste it on the dataclips query dashboard
+- you can also create your own sql scripts and paste them on the dataclips query dashboard
+- add a system.properties file in the root directory
+- add a GitHub secret, HEROKU_API_KEY, for the heroku api key which can be found on your account settings
+- add a JWT_SECRET in the heroku's settings -> config vars
+
+## GitHub Actions
+- create a GitHub workflow yml file
+- see https://github.com/marketplace/actions/deploy-to-heroku
+- rename your master branch to main branch on the branches page of your GitHub Repo
+- future push to your repo will deploy to Heroku
