@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrlBase: "https://superheroes-application.herokuapp.com/",
+  apiUrlBase: "http://localhost:8080/",
 };
 
 /*
