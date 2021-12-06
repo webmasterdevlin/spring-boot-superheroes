@@ -78,15 +78,15 @@
   },
   "proxy": {
     "/api": {
-      "target": "https://superheroes-application.herokuapp.com/api",
+      "target": "/api",
       "ws": true
     },
     "/authenticate": {
-      "target": "https://superheroes-application.herokuapp.com/authenticate",
+      "target": "/authenticate",
       "ws": true
     },
     "/register": {
-      "target": "https://superheroes-application.herokuapp.com/register",
+      "target": "/register",
       "ws": true
     }
   }
