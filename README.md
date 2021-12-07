@@ -16,36 +16,6 @@
 #### Swagger ui
 - http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
 
-
-#### Package Spring Boot and Angular in one Jar
-- create a directory and name it frontend or client-app
-- use dist/name-of-your-app directory for Angular or build directory for React in
-```xml
-<fileset dir="${project.basedir}/frontend/dist/name-of-your-app"/>
-```
-- add proxies in the package.json of Angular
-
-```json
-{
-  "proxy": {
-    "/api": {
-      "target": "http://localhost:8080/api",
-      "ws": true
-    },
-    "/authenticate": {
-      "target": "http://localhost:8080/authenticate",
-      "ws": true
-    },
-    "/register": {
-      "target": "http://localhost:8080/register",
-      "ws": true
-    }
-  }
-}
-```
-- add a MvcConfiguration class in Spring Boot backend targeting public folder
-
-
 #### Packaging Locally
 - use Java 17
 - you can use sdkman for sdk which is a java versions management
