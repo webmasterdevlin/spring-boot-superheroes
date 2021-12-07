@@ -35,9 +35,6 @@ build/
 
 logs
 
-
-### Frontend ###
-/frontend
 # compiled output
 /dist
 /tmp
