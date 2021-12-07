@@ -156,6 +156,7 @@
 - send GET http://localhost:8080/api/v1/anti-heroes, [{...}] should be the response
 - send PUT http://localhost:8080/api/v1/anti-heroes/{:id}
 - full crud should be working
+- https://www.mockaroo.com to generate SQL queries
 
 ## Heroku
 - create a GitHub account
