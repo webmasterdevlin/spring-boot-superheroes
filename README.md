@@ -12,6 +12,8 @@
     - Anti-Heroes is protected
 - JUnit Testing with Assertj
 - Redis in Villain module
+- GitHub Actions
+- Heroku
 
 #### Swagger ui
 - http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
