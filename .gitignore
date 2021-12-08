@@ -42,6 +42,9 @@ logs
 # Only exists if Bazel was run
 /bazel-out
 
+# frontend
+/frontend
+
 # dependencies
 /node_modules
 

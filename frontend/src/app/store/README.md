@@ -1,1 +1,0 @@
-#### [NGRX](https://ngrx.io/)
