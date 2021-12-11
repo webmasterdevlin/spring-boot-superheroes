@@ -5786,3 +5786,6 @@ java.io.FileNotFoundException: class path resource [public/index.html] cannot be
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:833)
 2021-12-08 20:39:29,581 INFO org.springdoc.api.AbstractOpenApiResource [http-nio-8080-exec-1] Init duration for springdoc-openapi is: 220 ms
+2021-12-08 21:37:23,495 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-12-08 21:37:23,504 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2021-12-08 21:37:23,507 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
