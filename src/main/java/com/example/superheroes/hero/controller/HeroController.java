@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 @PreAuthorize("permitAll()")
 public class HeroController {
 
-    private final HeroService heroService;
+    private HeroService heroService;
 
     public HeroController(HeroService heroService) {
         this.heroService = heroService;

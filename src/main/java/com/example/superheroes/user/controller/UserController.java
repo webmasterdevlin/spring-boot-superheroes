@@ -18,7 +18,7 @@ import java.util.UUID;
 @PreAuthorize("permitAll()")
 public class UserController {
 
-    private final UserService userService;
+    private UserService userService;
 
     @GetMapping("/api/v1/users")
     public Iterable<UserDto> getUsers() {

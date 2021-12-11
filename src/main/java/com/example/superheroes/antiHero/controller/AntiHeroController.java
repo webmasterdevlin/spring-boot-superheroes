@@ -24,8 +24,8 @@ import java.util.stream.StreamSupport;
 @PreAuthorize("isAuthenticated()") // for authorization
 public class AntiHeroController {
 
-    private final AntiHeroService service;
-    private final ModelMapper mapper;
+    private AntiHeroService service;
+    private ModelMapper mapper;
 
     @GetMapping
     public List<AntiHeroDto> getAntiHeroes() {

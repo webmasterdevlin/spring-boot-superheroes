@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 @PreAuthorize("permitAll()")
 public class VillainController {
 
-    private final VillainService villainService;
+    private VillainService villainService;
 
     @GetMapping
     public Iterable<Villain> getVillains() {
