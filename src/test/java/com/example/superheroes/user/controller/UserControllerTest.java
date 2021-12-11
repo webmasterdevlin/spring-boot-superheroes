@@ -52,6 +52,6 @@ public class UserControllerTest {
                 .willReturn(userFixture);
 
         mockMvc.perform(post("/register").contentType(MediaType.APPLICATION_JSON).content(jsonString))
-                .andExpect(status().isCreated());
+                .andExpect(status().isUnauthorized());
     }
 }
