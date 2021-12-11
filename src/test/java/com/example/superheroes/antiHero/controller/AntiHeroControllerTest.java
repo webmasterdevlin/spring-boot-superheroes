@@ -50,7 +50,6 @@ public class AntiHeroControllerTest {
         antiHeroesFixture = List.of(antiHero1, antiHero2);
     }
 
-
     @Test
     void getAntiHeroes_NoJWT_status403() throws Exception {
         given(service.findAllAntiHeroes()).willReturn(antiHeroesFixture);

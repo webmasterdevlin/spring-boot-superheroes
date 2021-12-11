@@ -171,6 +171,11 @@
 - full crud should be working
 - https://www.mockaroo.com to generate SQL queries
 
+## Unit and Integration Tests
+- setup application.properties for the unit and integration tests inside the src/test/resources folder
+- add javafaker in the pom.xml
+- start writing tests for services and for controllers
+
 ## Heroku
 - create a GitHub account
 - create a Heroku account
