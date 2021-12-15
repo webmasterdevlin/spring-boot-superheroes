@@ -60,6 +60,7 @@
 ## Controller (no-auth yet)
 - create a controller package inside the antiHero package
 - write an AntiHeroController class inside the controller package
+- create a DataLoader class to seed data into an empty database
 
 ## REST-Client for Postman/Insomnia replacement
 - create REST-Client folder in the root directory
