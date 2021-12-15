@@ -51,10 +51,10 @@
 ## Configurations (no-user and no-auth yet)
 - add spring-boot-configuration-processor in the pom.xml
 - create a config package inside the com.example.superheroes folder
-- write a CorsConfig configuration inside the config package
 - write a ModelMapperConfig configuration inside the config package
 - write CorsConfig configuration inside the config package, don't put anything related to security yet
 - write SecurityConfig configuration inside the config package, don't put anything related to security and user yet
+- The SecurityConfig removes the default login page of Spring Boot Security
 - restart IDE if not beans can't be found
 
 ## Controller (no-auth yet)
