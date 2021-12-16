@@ -130,13 +130,9 @@
 - trigger GET http://localhost:8080/actuator/health to see status UP
 
 ## Automated Tests
-- add a resources package under the test folder
-- in the resources package, write an application-test.properties
-- create a repository package under the java/com.example.superheroes folder
-- write a UserRepositoryTest class, repository/UserRepositoryTest.java
-- create a service package under the java/com.example.superheroes folder
-- write an AntiHeroServiceTest class, service/AntiHeroServiceTest.java
-- run the tests in UserRepositoryTest and AntiHeroServiceTest
+- setup application.properties for the unit and integration tests inside the src/test/resources folder
+- add javafaker in the pom.xml
+- start writing tests for services and for controllers
 
 #### Adding Client Application
 - write a MvcConfiguration configuration inside the config package
@@ -171,11 +167,6 @@
 - send PUT http://localhost:8080/api/v1/anti-heroes/{:id}
 - full crud should be working
 - https://www.mockaroo.com to generate SQL queries
-
-## Unit and Integration Tests
-- setup application.properties for the unit and integration tests inside the src/test/resources folder
-- add javafaker in the pom.xml
-- start writing tests for services and for controllers
 
 ## Heroku
 - create a GitHub account
