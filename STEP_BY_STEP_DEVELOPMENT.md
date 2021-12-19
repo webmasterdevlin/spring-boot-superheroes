@@ -73,6 +73,7 @@
 - add springdoc-openapi-ui and springdoc-openapi-data-rest in the pom.xml
 - write SwaggerConfig configuration inside the config package for custom Swagger UI
 - update the application.properties with app.version, app.name, and app.description
+- run the app and then go to this link: http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/
 
 ## User
 - create a user package under the com.example.superheroes folder
