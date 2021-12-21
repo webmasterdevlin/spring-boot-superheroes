@@ -3,7 +3,7 @@ package com.example.superheroes.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-@ResponseStatus(HttpStatus.NOT_ACCEPTABLE)
+@ResponseStatus(value = HttpStatus.NOT_ACCEPTABLE, reason = "Invalid input")
 public class InvalidInputException extends RuntimeException {
 
     public InvalidInputException() {
