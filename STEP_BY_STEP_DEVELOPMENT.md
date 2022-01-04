@@ -133,7 +133,9 @@
 ## Automated Tests
 - setup application.properties for the unit and integration tests inside the src/test/resources folder
 - add javafaker in the pom.xml
+- add google.guava, google.code.gson, commons.io, in the pom.xml
 - start writing tests for services and for controllers
+- heroes and villains use different mocking implementation
 
 #### Adding Client Application
 - write a MvcConfiguration configuration inside the config package
