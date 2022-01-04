@@ -1,0 +1,16 @@
+[
+  {
+    "firstName": "Darkseid",
+    "lastName": "none",
+    "house": "DC",
+    "knownAs": "The ruler of Apokolops",
+    "id": "c1f28a4d-fc9b-449e-a475-9112ece99359"
+  },
+  {
+    "firstName": "Victor",
+    "lastName": "Von Doom",
+    "house": "Marvel",
+    "knownAs": "Doctor Doom",
+    "id": "c04a2fd0-376e-4234-9dfc-ac63863055ea"
+  }
+]
