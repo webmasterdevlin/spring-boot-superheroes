@@ -141,13 +141,16 @@
 - write a MvcConfiguration configuration inside the config package
 - create a directory and name it frontend
 - go to the comment "START packaging spring and client app in one jar" of the pom.xml to see the config for Spring Boot with client application
-- the fileset muse be mapped to the right directory of the frontend application
+- the fileset must be mapped to the right directory of the frontend application
 ```xml
 <fileset dir="${project.basedir}/frontend/dist/name-of-your-app"/>
 ```
 - If using Angular, use dist/name-of-your-app directory to map Angular
 - If using React, use build directory to map React
-- For Angular, add the flag --prod into the npm run serve command to enable production mode
+- For Angular, add the flag --configuration production into the npm run build command to enable production mode
+```json
+"build": "ng build --configuration production",
+```
 
 ## Postgres SQL Database
 - check if the docker client is running
