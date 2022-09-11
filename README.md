@@ -22,8 +22,8 @@
 
 ```zsh
 sdk list java
-sdk install java 17.0.1-tem 
-sdk use java 17.0.1-tem 
+sdk install java 17.0.3-tem 
+sdk use java 17.0.3-tem 
 ```
 
 - install maven
